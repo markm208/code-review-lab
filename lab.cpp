@@ -1,20 +1,19 @@
 /*
-This function remove event numbers from the vector.
+This function removes even numbers from the vector.
 */
-void removeEvens(vector < int >& evens)
+void removeEvens(vector < int >& allNumbers)
 {
 	//go through all of the numbers
-	for (int i = 0; i < evens.size(); i++)
+	for (int i = 0; i < allNumbers.size(); i++)
 	{
 		//if a number is even
-		if (isEven(evens[i]) == true)
+		if (isEven(allNumbers[i]) == true)
 		{
 			//remove the number from the vector
-			evens.erase(evens.begin() + i);
-		}
-		else //the number is odd
-		{
-			//cout<<evens[i]<<" ";
+			allNumbers.erase(allNumbers.begin() + i);
+            
+            //in order to avoid skipping a value, decrement i
+            i--;
 		}
 	}
 }
